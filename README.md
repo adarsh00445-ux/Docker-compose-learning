@@ -1,26 +1,28 @@
 # Docker Compose Learning
 
-This is my first Docker Compose project.
+This repository contains my Docker Compose practice projects.
 
-I created this project to understand how Docker Compose works with a Python Flask application.
+## Technologies
+- Python
+- Flask
+- Docker
+- Docker Compose
+- MongoDB
 
-In this project I learned:
-- How to write a Dockerfile
-- How to create a docker-compose.yml file
-- How to build an image using Docker Compose
-- How to create and run a container
-- How to access the application in the browser
+## What I learned
+- Build Docker images
+- Use Docker Hub images
+- Create and run containers
+- Port mapping
+- Docker volumes
+- Environment variables
+- depends_on
+- restart policy
+- Healthcheck
+- Docker networks
 
-To run this project:
+## Project
 
-```bash
-docker compose up
-```
+This project contains a Flask application and a MongoDB database running together using Docker Compose.
 
-Then open:
-
-http://localhost:5000
-
-I will keep updating this repository as I learn more about Docker Compose.
-
-Thank you for visiting my project.
+I created this repository to practice Docker Compose and improve my DevOps skills.
