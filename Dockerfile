@@ -1,5 +1,6 @@
 FROM python:3.11
 WORKDIR /adarsh
+COPY requirements.txt .
+RUN pip install -r requrement.txt
 COPY . .
-RUN pip install -r requirements.txt
 CMD ["python","app.py"]

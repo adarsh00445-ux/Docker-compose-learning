@@ -1,7 +1,35 @@
 services:
-  myfirstcomposefile:
+  app:
     build: .
+    container_name: flask_container
     ports:
       - "5000:5000"
+    depends_on:
+      - mongo
+    restart: always
+    command: python app.py
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - my_network
 
- 
+  mongo:
+    image: mongo
+    container_name: mongo_container
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=1234
+    volumes:
+      - mongo_data:/data/db
+    restart: always
+    networks:
+      - my_network
+
+volumes:
+  mongo_data:
+
+networks:
+  my_network:
